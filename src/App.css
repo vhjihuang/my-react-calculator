@@ -40,3 +40,163 @@
 .read-the-docs {
   color: #888;
 }
+
+.container {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--bg-secondary);
+  border-radius: 28px;
+  box-shadow: 
+    0 12px 40px var(--shadow-dark),
+    0 0 0 1px var(--border-color),
+    inset 0 1px 0 var(--shadow-light);
+  backdrop-filter: blur(20px);
+}
+
+#display,
+.display {
+  width: 100%;
+  height: 100px;
+  background: var(--bg-tertiary);
+  border-radius: 20px;
+  margin-bottom: 24px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: inset 0 3px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 14px;
+  height: 360px;
+  width: 100%;
+}
+
+button {
+  width: 82px;
+  height: 64px;
+  border-radius: 18px;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  box-shadow: 
+    0 3px 12px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 var(--shadow-light);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+button:hover::before {
+  opacity: 1;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 var(--shadow-light);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+#zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+#add, #subtract, #multiply, #divide {
+  background: var(--accent-orange);
+  color: white;
+  font-weight: 600;
+}
+
+#add:hover, #subtract:hover, #multiply:hover, #divide:hover {
+  background: var(--accent-orange-hover);
+}
+
+#equals {
+  width: 356px;
+  height: 64px;
+  background: var(--accent-orange);
+  color: white;
+  font-weight: 600;
+  font-size: 2.1rem;
+  grid-column: 1 / span 4;
+  grid-row: 5;
+}
+
+#equals:hover {
+  background: var(--accent-orange-hover);
+}
+
+#clear {
+  background: var(--accent-blue);
+  color: white;
+  font-weight: 600;
+}
+
+#clear:hover {
+  background: var(--accent-blue-hover);
+}
+
+#decimal {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-size: 2.3rem;
+  font-weight: 300;
+}
+
+#seven { grid-column: 1; grid-row: 1; }
+#eight { grid-column: 2; grid-row: 1; }
+#nine { grid-column: 3; grid-row: 1; }
+#divide { grid-column: 4; grid-row: 1; }
+#four { grid-column: 1; grid-row: 2; }
+#five { grid-column: 2; grid-row: 2; }
+#six { grid-column: 3; grid-row: 2; }
+#multiply { grid-column: 4; grid-row: 2; }
+#one { grid-column: 1; grid-row: 3; }
+#two { grid-column: 2; grid-row: 3; }
+#three { grid-column: 3; grid-row: 3; }
+#subtract { grid-column: 4; grid-row: 3; }
+#clear { grid-column: 1; grid-row: 4; }
+#zero { grid-column: 2; grid-row: 4; }
+#decimal { grid-column: 3; grid-row: 4; }
+#add { grid-column: 4; grid-row: 4; }
+#equals { grid-column: 1 / span 4; grid-row: 5; }
